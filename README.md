@@ -22,5 +22,6 @@ const onButtonClick = (identity,status)=>{
   let action = [...actions()].filter(([key,value])=>(key.test(`${identity}_${status}`)))
   action.forEach(([key,value])=>value.call(this))
 }
+```
 
 <p align="left">原文链接：<a href="https://juejin.im/post/5bdfef86e51d453bf8051bf8" target="_blank" rel="noopener noreferrer"></a></p>
