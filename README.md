@@ -1,4 +1,5 @@
 # JavaScript--大杂烩
+##### 说明（个人收录的一些文章跟自己的一些个人见解，如果觉得对你有帮助的话，可以给个星星鼓励下作者！
 
 ### mk 语法
 <p align="left"><a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener noreferrer"><img width="100" src="https://github.com/Hero-ChiJay/JavaScript--Hodgepodge/blob/master/images/md.png" alt="md logo"></a></p>
@@ -7,9 +8,9 @@
 
 ```javascript
 const actions = ()=>{
-  const functionA = ()=>{/*do sth*/}
-  const functionB = ()=>{/*do sth*/}
-  const functionC = ()=>{/*send log*/}
+  const functionA = ()=>{/*Do sth*/}
+  const functionB = ()=>{/*Do sth*/}
+  const functionC = ()=>{/*Send log*/}
   return new Map([
     [/^guest_[1-4]$/,functionA],
     [/^guest_5$/,functionB],
@@ -25,3 +26,26 @@ const onButtonClick = (identity,status)=>{
 ```
 
 <p align="left">原文链接：<a href="https://juejin.im/post/5bdfef86e51d453bf8051bf8" target="_blank" rel="noopener noreferrer">JavaScript 复杂判断的更优雅写法</a></p>
+
+### async function错误处理
+
+利用async function做请求一些异步数据时，利用`try...catch`捕获错误，一般情况下错误先行，我们可以根据api接口返回的code进行判断；
+错误先行， 先判断code是否符合， 否则直接抛出异常
+
+```javascript
+async function Handle() {
+  try {
+    let result = await $http.getData(argument)
+    if (result.code !=== 0) throw Error(result.errorMsg) /*Error First*/
+    /*Do sth*/
+  } catch(error) {
+    /*Unified processing error*/
+    let error  = error.message || '默认错误信息'
+    /*Do sth*/
+  } finally {
+    /*Do sth*/
+  }
+}
+```
+<p align="left">错误处理链接：<a href="http://javascript.ruanyifeng.com/grammar/error.html" target="_blank" rel="noopener noreferrer">错误处理机制</a></p>
+<p align="left">了解async函数链接：<a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="noopener noreferrer">async 函数</a></p>
