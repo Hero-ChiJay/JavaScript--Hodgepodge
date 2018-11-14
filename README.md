@@ -30,7 +30,7 @@ const onButtonClick = (identity,status)=>{
 ### async function错误处理
 
 利用async function做请求一些异步数据时，利用`try...catch`捕获错误，一般情况下错误先行，我们可以根据api接口返回的code进行判断；
-错误先行， 先判断code是否符合， 否则直接抛出异常
+错误先行， 先判断code是否符合，符合的进行数据操作， 不符合的直接抛出异常， 然后在catch统一处理
 
 ```javascript
 async function Handle() {
