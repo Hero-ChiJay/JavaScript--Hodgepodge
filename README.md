@@ -7,10 +7,10 @@
 ### 优化（if， switch）嵌套写法
 
 ```javascript
-const actions = ()=>{
-  const functionA = ()=>{/*Do sth*/}
-  const functionB = ()=>{/*Do sth*/}
-  const functionC = ()=>{/*Send log*/}
+const actions = () => {
+  const functionA = () => {/*Do sth*/}
+  const functionB = () => {/*Do sth*/}
+  const functionC = () => {/*Send log*/}
   return new Map([
     [/^guest_[1-4]$/,functionA],
     [/^guest_5$/,functionB],
@@ -19,9 +19,9 @@ const actions = ()=>{
   ])
 }
 
-const onButtonClick = (identity,status)=>{
-  let action = [...actions()].filter(([key,value])=>(key.test(`${identity}_${status}`)))
-  action.forEach(([key,value])=>value.call(this))
+const onButtonClick = (identity,status) => {
+  let action = [...actions()].filter(([key,value]) => (key.test(`${identity}_${status}`)))
+  action.forEach(([key,value]) => value.call(this))
 }
 ```
 
