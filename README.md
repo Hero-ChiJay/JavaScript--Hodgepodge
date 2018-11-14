@@ -36,7 +36,7 @@ const onButtonClick = (identity,status)=>{
 async function Handle() {
   try {
     let result = await $http.getData(argument)
-    if (result.code !=== 0) throw Error(result.errorMsg) /*Error First*/
+    if (result.code !== 0) throw Error(result.errorMsg) /*Error First*/
     /*Do sth*/
   } catch(error) {
     /*Unified processing error*/
