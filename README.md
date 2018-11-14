@@ -1,9 +1,9 @@
 # JavaScript--大杂烩
 
-## mk 语法
-<p align="center"><a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener noreferrer"><img width="100" src="https://github.com/Hero-ChiJay/JavaScript--Hodgepodge/blob/master/images/md.png" alt="md logo"></a></p>
+### mk 语法
+<p align="left"><a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener noreferrer"><img width="100" src="https://github.com/Hero-ChiJay/JavaScript--Hodgepodge/blob/master/images/md.png" alt="md logo"></a></p>
 
-## 优化（if， switch）嵌套写法
+### 优化（if， switch）嵌套写法
 
 ```javascript
 const actions = ()=>{
