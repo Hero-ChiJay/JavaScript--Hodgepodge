@@ -49,3 +49,9 @@ async function Handle() {
 ```
 <p align="left">错误处理链接：<a href="http://javascript.ruanyifeng.com/grammar/error.html" target="_blank" rel="noopener noreferrer">错误处理机制</a></p>
 <p align="left">了解async函数链接：<a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="noopener noreferrer">async 函数</a></p>
+
+### 那些年我们的JavaScript都写规范了吗
+
+<p align="left">腾讯参考文档：<a href="https://juejin.im/post/5bdfef86e51d453bf8051bf8" target="_blank" rel="noopener noreferrer">valid-jsdoct</a></p>
+
+<p align="left">JSDoc参考文档：<a href="https://juejin.im/post/5bdfef86e51d453bf8051bf8" target="_blank" rel="noopener noreferrer">@use JSDoc</a></p>
