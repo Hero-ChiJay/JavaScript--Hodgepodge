@@ -52,6 +52,6 @@ async function Handle() {
 
 ### 那些年我们的JavaScript都写规范了吗
 
-<p align="left">腾讯参考文档：<a href="https://juejin.im/post/5bdfef86e51d453bf8051bf8" target="_blank" rel="noopener noreferrer">valid-jsdoct</a></p>
+<p align="left">腾讯参考文档：<a href="https://cloud.tencent.com/developer/section/1135849" target="_blank" rel="noopener noreferrer">valid-jsdoct</a></p>
 
-<p align="left">JSDoc参考文档：<a href="https://juejin.im/post/5bdfef86e51d453bf8051bf8" target="_blank" rel="noopener noreferrer">@use JSDoc</a></p>
+<p align="left">JSDoc参考文档：<a href="http://usejsdoc.org" target="_blank" rel="noopener noreferrer">@use JSDoc</a></p>
