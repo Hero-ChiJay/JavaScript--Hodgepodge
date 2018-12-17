@@ -1,7 +1,7 @@
 # JavaScript--大杂烩
 ##### 说明（个人收录的一些文章跟自己的一些个人见解
 
-### mk 语法
+### md 语法
 <p align="left"><a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener noreferrer"><img width="100" src="https://github.com/Hero-ChiJay/JavaScript--Hodgepodge/blob/master/images/md.png" alt="md logo"></a></p>
 
 ### 优化（if， switch）嵌套写法
