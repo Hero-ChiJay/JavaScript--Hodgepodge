@@ -60,10 +60,9 @@ async function Handle() {
 <p align="left">在线生成publicKey：<a href="http://travistidwell.com/jsencrypt/demo/" target="_blank" rel="noopener noreferrer">生成publicKey地址</a></p>
 <p>在vue的mainJS中混入,将生成的的秘钥放置在服务端上, 以下是演示放置出来</p>
 <p>引入jsencrypt库</p>
-```javascript
+
   npm i jsencrypt OR
   yarn add jsencrypt
-```
   import JsEncrypt from 'jsencrypt' //加密
   Vue.mixin({//混入加密
     methods: {
