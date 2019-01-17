@@ -84,7 +84,7 @@ async function Handle() {
   })
   全局混入使用
   let secretParams = this.RSAencrypt(params)
-```
+
 局部混入，命名为a.js
 ```javascript
   import JsEncrypt from 'jsencrypt' //加密
