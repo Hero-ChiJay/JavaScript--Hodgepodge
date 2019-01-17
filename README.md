@@ -105,7 +105,7 @@ async function Handle() {
   <style lang="scss" scoped>
   </style>
 ```
-<p>在vue的mainJS中混入,将生成的的秘钥放置在服务端上, 以下是演示放置出来</p>
+在vue的mainJS中混入,将生成的的秘钥放置在服务端上, 以下是演示放置出来
 ```javascript
   import JsEncrypt from 'jsencrypt' //加密
   Vue.mixin({//混入加密
@@ -113,14 +113,12 @@ async function Handle() {
       RSAencrypt(params){
         //实例化jsEncrypt对象
         const jse = new JsEncrypt()
-        //设置公钥
-        jse.setPublicKey(keys.publicKey)
+        jse.setPublicKey(keys.publicKey) //设置公钥
         return jse.encrypt(params)
       },
       RSAdecrypt(params){ //解密
         const jse = new JsEncrypt()
-        //设置私钥
-        jse.setPrivateKey(keys.privateKey)
+        jse.setPrivateKey(keys.privateKey) //设置私钥
         return jse.decrypt(params)
       }
     }
