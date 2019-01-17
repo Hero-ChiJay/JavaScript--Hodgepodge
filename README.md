@@ -63,7 +63,7 @@ async function Handle() {
 ```javascript
   npm i jsencrypt OR
   yarn add jsencrypt
-
+```
   import JsEncrypt from 'jsencrypt' //加密
   Vue.mixin({//混入加密
     methods: {
