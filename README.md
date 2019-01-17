@@ -55,3 +55,94 @@ async function Handle() {
 <p align="left">腾讯参考文档：<a href="https://cloud.tencent.com/developer/section/1135849" target="_blank" rel="noopener noreferrer">valid-jsdoct</a></p>
 
 <p align="left">JSDoc参考文档：<a href="http://usejsdoc.org" target="_blank" rel="noopener noreferrer">@use JSDoc</a></p>
+
+### 在VUE中http请求参数加密
+
+# 引入jsencrypt库
+```javascript
+npm i jsencrypt OR
+yarn add jsencrypt
+```
+<p align="left">在线生成publicKey：<a href="http://travistidwell.com/jsencrypt/demo/" target="_blank" rel="noopener noreferrer">publicKey</a></p>
+
+# 在vue的mainJS中混入
+将生成的的秘钥放置在服务端上, 以下是演示放置出来
+```javascript
+import JsEncrypt from 'jsencrypt' //加密
+Vue.mixin({//混入加密
+  methods: {
+    RSAencrypt(params){
+      //实例化jsEncrypt对象
+      const jse = new JsEncrypt()
+      //设置公钥
+      jse.setPublicKey(keys.publicKey)
+      return jse.encrypt(params)
+    },
+		RSAdecrypt(params){ //解密
+      const jse = new JsEncrypt()
+      //设置私钥
+			jse.setPrivateKey(keys.privateKey)
+			return jse.decrypt(params)
+		}
+  }
+})
+```
+
+# 使用
+```javascript
+/**
+ * @params {Object} params 待加密的参数
+ * @returns {String} secretParams 加密后的参数
+ */
+let secretParams = this.RSAencrypt(params)
+```
+# 局部混入
+
+```javascript
+命名为a.js
+import JsEncrypt from 'jsencrypt' //加密
+export default {
+  methods: {
+    RSAencrypt(params){
+      //实例化jsEncrypt对象
+      const jse = new JsEncrypt()
+      //设置公钥
+      jse.setPublicKey(keys.publicKey)
+      return jse.encrypt(params)
+    },
+		RSAdecrypt(params){ //解密
+      const jse = new JsEncrypt()
+      //设置私钥
+			jse.setPrivateKey(keys.privateKey)
+			return jse.decrypt(params)
+		}
+  }
+}
+```
+# 使用
+```vue
+<template>
+</template>
+
+<script>
+import a from 'a.js'
+export default {
+  mixins: [a]
+  method: {
+    async login() {
+    /**
+     * @params {Object} params 待加密的参数
+     * @returns {String} secretParams 加密后的参数
+     */
+    let secretParams = this.RSAencrypt(params)
+    let rep = await $http.login(secretParams)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+</style>
+
+```
+
