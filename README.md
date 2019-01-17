@@ -106,7 +106,7 @@ async function Handle() {
   }
 ```
 局部使用
-```javascript
+```vue
   <template>
   </template>
   <script>
