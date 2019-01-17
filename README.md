@@ -58,16 +58,16 @@ async function Handle() {
 
 ### 在VUE中http请求参数加密
 
-#### 引入jsencrypt库
 ```javascript
+引入jsencrypt库
 npm i jsencrypt OR
 yarn add jsencrypt
 ```
 <p align="left">在线生成publicKey：<a href="http://travistidwell.com/jsencrypt/demo/" target="_blank" rel="noopener noreferrer">publicKey</a></p>
 
-#### 在vue的mainJS中混入
-将生成的的秘钥放置在服务端上, 以下是演示放置出来
 ```javascript
+在vue的mainJS中混入
+将生成的的秘钥放置在服务端上, 以下是演示放置出来
 import JsEncrypt from 'jsencrypt' //加密
 Vue.mixin({//混入加密
   methods: {
@@ -87,17 +87,19 @@ Vue.mixin({//混入加密
   }
 })
 ```
-#### 使用
+
 ```javascript
+使用
 /**
  * @params {Object} params 待加密的参数
  * @returns {String} secretParams 加密后的参数
  */
 let secretParams = this.RSAencrypt(params)
 ```
-#### 局部混入
+
 
 ```javascript
+局部混入
 命名为a.js
 import JsEncrypt from 'jsencrypt' //加密
 export default {
