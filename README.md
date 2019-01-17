@@ -60,8 +60,8 @@ async function Handle() {
 
 引入jsencrypt库
 ```javascript
-npm i jsencrypt OR
-yarn add jsencrypt
+  npm i jsencrypt OR
+  yarn add jsencrypt
 ```
 <p align="left">在线生成publicKey：<a href="http://travistidwell.com/jsencrypt/demo/" target="_blank" rel="noopener noreferrer">生成publicKey地址</a></p>
 在vue的mainJS中混入,将生成的的秘钥放置在服务端上, 以下是演示放置出来
