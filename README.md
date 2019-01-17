@@ -58,32 +58,36 @@ async function Handle() {
 
 ### 在VUE中http请求参数加密
 <p align="left">在线生成publicKey：<a href="http://travistidwell.com/jsencrypt/demo/" target="_blank" rel="noopener noreferrer">生成publicKey地址</a></p>
+
 引入jsencrypt库
+
 ```javascript
 npm i jsencrypt OR
 yarn add jsencrypt
 ```
+
 在vue的mainJS中混入,将生成的的秘钥放置在服务端上, 以下是演示放置出来
 ```javascript
-  import JsEncrypt from 'jsencrypt' //加密
-  Vue.mixin({//混入加密
-    methods: {
-      RSAencrypt(params){
-        //实例化jsEncrypt对象
-        const jse = new JsEncrypt()
-        jse.setPublicKey(keys.publicKey) //设置公钥
-        return jse.encrypt(params)
-      },
-      RSAdecrypt(params){ //解密
-        const jse = new JsEncrypt()
-        jse.setPrivateKey(keys.privateKey) //设置私钥
-        return jse.decrypt(params)
-      }
+import JsEncrypt from 'jsencrypt' //加密
+Vue.mixin({//混入加密
+  methods: {
+    RSAencrypt(params){
+      //实例化jsEncrypt对象
+      const jse = new JsEncrypt()
+      jse.setPublicKey(keys.publicKey) //设置公钥
+      return jse.encrypt(params)
+    },
+    RSAdecrypt(params){ //解密
+      const jse = new JsEncrypt()
+      jse.setPrivateKey(keys.privateKey) //设置私钥
+      return jse.decrypt(params)
     }
-  })
-  全局混入使用
-  let secretParams = this.RSAencrypt(params)
+  }
+})
+全局混入使用
+let secretParams = this.RSAencrypt(params)
 ``` 
+
 局部混入，命名为a.js
 ```javascript
   import JsEncrypt from 'jsencrypt' //加密
