@@ -90,47 +90,47 @@ let secretParams = this.RSAencrypt(params)
 
 局部混入，命名为a.js
 ```javascript
-  import JsEncrypt from 'jsencrypt' //加密
-  export default {
-    methods: {
-      RSAencrypt(params){
-        //实例化jsEncrypt对象
-        const jse = new JsEncrypt()
-        //设置公钥
-        jse.setPublicKey(keys.publicKey)
-        return jse.encrypt(params)
-      },
-      RSAdecrypt(params){ //解密
-        const jse = new JsEncrypt()
-        //设置私钥
-        jse.setPrivateKey(keys.privateKey)
-        return jse.decrypt(params)
-      }
+import JsEncrypt from 'jsencrypt' //加密
+export default {
+  methods: {
+    RSAencrypt(params){
+      //实例化jsEncrypt对象
+      const jse = new JsEncrypt()
+      //设置公钥
+      jse.setPublicKey(keys.publicKey)
+      return jse.encrypt(params)
+    },
+    RSAdecrypt(params){ //解密
+      const jse = new JsEncrypt()
+      //设置私钥
+      jse.setPrivateKey(keys.privateKey)
+      return jse.decrypt(params)
     }
   }
+}
 ```
 局部使用
 ```vue
-  <template>
-  </template>
-  <script>
-  import a from 'a.js'
-  export default {
-    mixins: [a]
-    method: {
-      async login() {
-      /**
-       * @params {Object} params 待加密的参数
-       * @returns {String} secretParams 加密后的参数
-       */
-      let secretParams = this.RSAencrypt(params)
-      let rep = await $http.login(secretParams)
-      }
+<template>
+</template>
+<script>
+import a from 'a.js'
+export default {
+  mixins: [a]
+  method: {
+    async login() {
+    /**
+     * @params {Object} params 待加密的参数
+     * @returns {String} secretParams 加密后的参数
+     */
+    let secretParams = this.RSAencrypt(params)
+    let rep = await $http.login(secretParams)
     }
   }
-  </script>
-  <style lang="scss" scoped>
-  </style>
+}
+</script>
+<style lang="scss" scoped>
+</style>
 ```
 
 
