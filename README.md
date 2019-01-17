@@ -83,10 +83,6 @@ async function Handle() {
     }
   })
   全局混入使用
-  /**
-   * @params {Object} params 待加密的参数
-   * @returns {String} secretParams 加密后的参数
-   */
   let secretParams = this.RSAencrypt(params)
 ```
 局部混入，命名为a.js
