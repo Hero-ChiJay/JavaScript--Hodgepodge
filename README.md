@@ -132,5 +132,15 @@ export default {
 <style lang="scss" scoped>
 </style>
 ```
-
-
+### 取不相同的2~32随机数
+```javascript
+function fn (arr,len) {
+	arr = arr ?  arr : Array.apply(null, Array(len))
+	let index = arr.indexOf(undefined)
+	if (index === -1) return arr
+	let ran = Math.floor(Math.random() * (32 - 2 + 1)) + 2
+	if (arr.includes(ran)) return fn(arr)
+	arr.splice(index, 1, ran)
+	return fn(arr)
+}
+```
